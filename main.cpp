@@ -1,37 +1,37 @@
 
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
-struct Musica{
+struct Subscripcion{
     char nombre[22];
-    char cancion[22];
+    char rev[22];
 };
-struct Cancion{
-    char nombre[22];
-    char albums;
-    Musica musica;
+struct Revista{
+    char subs;
+    float costo;
+    Subscripcion subscripcion;
 };
 
 int main()
 {
-    Cancion canciones[12];
-    Cancion *apuntador=canciones;
-    for(int i=0;i<=1;i++){
-        cout<<"Nombre del artista: ";
-        cin.getline(canciones[i].nombre,20);
-        cout<<"Nombre de la cancion: ";
-        cin>>canciones[i].albums;
-        cout<<"Genero: ";
+    Revista revistas[12];
+    Revista *apuntador=revistas;
+    for(int i=1;i<=2;i++){
+        cout<<"Nombre del usuario: ";
+        cin.getline(revistas[i].subscripcion.nombre,20);
+        cout<<"Tiempo de subscripcion: ";
+        cin>>revistas[i].subs;
+        cout<<"Nombre de la revista: ";
         fflush(stdin);
-        cin.getline(canciones[i].musica.nombre,20);
-        cout<<"Album: ";
-        cin.getline(canciones[i].musica.cancion,20);
+        cin.getline(revistas[i].subscripcion.rev,20);
+        cout<<"Costo de subscripcion: ";
+        cin>>revistas[i].costo,20;
     }
     cout<<endl;
-    for(;apuntador<=&canciones[1];apuntador++){
-        cout<<"Nombre del artista:  "<<apuntador->nombre<<endl;
-        cout<<"Nombre de la cancion: "<<apuntador->albums<<endl;
-        cout<<"Genero: "<<apuntador->musica.nombre<<endl;
-        cout<<"Album: "<<apuntador->musica.cancion<<endl;
+    for(;apuntador<=&revistas[1];apuntador++){
+        cout<<"Nombre del usuario: "<<apuntador->subscripcion.nombre<<endl;
+        cout<<"Tiempo de subscripcion: "<<apuntador->subs<<endl;
+        cout<<"Nombre de la revista: "<<apuntador->subscripcion.rev<<endl;
+        cout<<"Costo de subscripcion: "<<apuntador->costo<<endl;
         cout<<endl;
     }
 
